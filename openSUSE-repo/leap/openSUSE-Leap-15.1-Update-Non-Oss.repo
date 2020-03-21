@@ -1,0 +1,7 @@
+[openSUSE-Leap-151-Updat-Oss.repo]
+name=Online updates for openSUSE Leap:15.1 (standard)
+type=rpm-md
+baseurl=http://download.opensuse.org/update/leap/15.1/oss/
+gpgcheck=1
+gpgkey=http://download.opensuse.org/update/leap/15.1/oss/repodata/repomd.xml.key
+enabled=1

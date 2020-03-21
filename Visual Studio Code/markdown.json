@@ -1,0 +1,26 @@
+{
+    "Insert a post": {
+        // "Insert a post" 是该代码片段的名称
+        "prefix": "head",
+        // "head" 是我为这个代码片段指定的自动补全提示前缀
+        "body": [
+            // "body" 内是代码片段的内容
+            "---",
+            "layout: post",
+            "title: $TM_FILENAME_BASE",
+            // 自动将文件名填入此处
+            "slug: ${TM_FILENAME_BASE/[^0-9^a-z^A-Z^\u4e00-\u9fa5]/_/g}",
+            // 自动将文件名填入此处，并替换所有不是中、英文字符、数字的字符为_
+            "date: $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
+            // 自动生成形似 2020/01/30 20:56 的时间戳
+            "author: waleslau",
+            "status: ${1|publish,hidden,draft|}",
+            // 下拉选项,帮助我指定文档状态(发布、隐藏、草稿)
+            "comment: true",
+            "categories: ",
+            "tags: ",
+            "---\n\n"
+        ],
+        "description": "snippets for blog.oopsky.top and wiki.oopsky.top"
+    }
+}

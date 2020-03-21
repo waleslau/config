@@ -1,0 +1,23 @@
+[openSUSE-leap-15.1-oss]
+name=openSUSE-leap-15.1-oss
+enabled=1
+autorefresh=1
+baseurl=https://mirror.bjtu.edu.cn/opensuse/update/leap/15.1/oss/
+path=/
+type=rpm-md
+keeppackages=0
+[openSUSE-leap-15.1-non-oss]
+name=openSUSE-leap-15.1-non-oss
+enabled=1
+autorefresh=1
+baseurl=https://mirror.bjtu.edu.cn/opensuse/update/leap/15.1/non-oss/
+path=/
+type=rpm-md
+keeppackages=0
+[packman]
+name=Packman repository (openSUSE_leap-15.1)
+enabled=1
+autorefresh=1
+baseurl=https://mirror.bjtu.edu.cn/packman/suse/openSUSE_Leap_15.1/
+type=rpm-md
+keeppackages=0

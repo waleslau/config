@@ -1,0 +1,7 @@
+[home_opensuse_zh]
+name=openSUSE for Chinese Users Project (openSUSE_Leap_15.1)
+type=rpm-md
+baseurl=http://download.opensuse.org/repositories/home:/opensuse_zh/openSUSE_Leap_15.1/
+gpgcheck=1
+gpgkey=http://download.opensuse.org/repositories/home:/opensuse_zh/openSUSE_Leap_15.1/repodata/repomd.xml.key
+enabled=1

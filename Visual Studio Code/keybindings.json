@@ -1,0 +1,16 @@
+// 将键绑定放在此文件中以覆盖默认值
+[
+    {
+        "key": "alt+p",
+        // 指定快捷键
+        "command": "editor.action.insertSnippet",
+        // 动作:执行命令插入代码片段
+        "when": "editorTextFocus",
+        // 生效条件:文本编辑器获得焦点的期间
+        "args": {
+            "langId": "markdown",
+            "name": "Insert a post"
+            // 这里 "name" 后 填代码片段的名字
+        }
+    }
+]
