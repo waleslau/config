@@ -1,0 +1,182 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [{
+                "address": "https://1.1.1.1/dns-query",
+                "domains": [
+                    "geosite:geolocation-!cn",
+                    "geosite:speedtest"
+                ]
+            },
+            "https://1.1.1.1/dns-query",
+            "https://dns.google/dns-query",
+            {
+                "address": "114.114.114.114",
+                "port": 53,
+                "domains": [
+                    "geosite:cn"
+                ]
+            }
+        ]
+    },
+    "inbounds": [{
+            "protocol": "socks",
+            "listen": "127.0.0.1",
+            "port": 10080,
+            "tag": "Socks-In",
+            "settings": {
+                "ip": "127.0.0.1",
+                "udp": true,
+                "auth": "noauth"
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "protocol": "http",
+            "listen": "127.0.0.1",
+            "port": 10081,
+            "tag": "Http-In",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [{
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [{
+                    "address": " ",
+                    "port": 34130,
+                    "users": [{
+                        "id": " ",
+                        "alterId": 100,
+                        "email": "t@t.tt",
+                        "security": "auto"
+                    }]
+                }]
+            },
+            "tag": "Proxy",
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "connectionReuse": true
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": 8
+            }
+        },
+        {
+            "protocol": "dns",
+            "tag": "Dns-Out"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "Direct",
+            "settings": {
+                "domainStrategy": "UseIPv4"
+            }
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "Reject",
+            "settings": {
+                "response": {
+                    "type": "http"
+                }
+            }
+        }
+    ],
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [{
+                "type": "field",
+                "outboundTag": "Dns-Out",
+                "inboundTag": [
+                    "Socks-In",
+                    "Http-In"
+                ],
+                "network": "udp",
+                "port": 53
+            },
+            {
+                "type": "field",
+                "outboundTag": "Direct",
+                "protocol": [
+                    "bittorrent"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Reject",
+                "domain": [
+                    "geosite:category-ads-all"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Proxy",
+                "domain": [
+                    "geosite:geolocation-!cn",
+                    "geosite:speedtest"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Direct",
+                "domain": [
+                    "geosite:cn"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Direct",
+                "ip": [
+                    "223.5.5.5/32",
+                    "119.29.29.29/32",
+                    "180.76.76.76/32",
+                    "114.114.114.114/32"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Proxy",
+                "ip": [
+                    "1.1.1.1/32",
+                    "1.0.0.1/32",
+                    "8.8.8.8/32",
+                    "8.8.4.4/32"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Direct",
+                "ip": [
+                    "geoip:cn",
+                    "geoip:private"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "Proxy",
+                "ip": [
+                    "0.0.0.0/0",
+                    "::/0"
+                ]
+            }
+        ]
+    }
+}
