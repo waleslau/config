@@ -4,8 +4,8 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-    "initialRows": 30,
-    "initialCols": 120,
+    "initialRows": 20,
+    "initialCols": 80,
     "alwaysShowTabs": true,
     "showTerminalTitleInTitlebar": true,
     "experimental_showTabsInTitlebar": true,
@@ -126,7 +126,8 @@
             "blue": "#1080d0",
             "purple": "#8700ff",
             "cyan": "#43a8d0",
-            "white": "#d9d9d9",
+           // "white": "#d9d9d9",
+            "white": "#bbbbbb",
             "brightBlack": "#555555",
             "brightRed": "#f6669d",
             "brightGreen": "#b1e05f",
@@ -136,7 +137,8 @@
             "brightCyan": "#51ceff",
             "brightWhite": "#ffffff",
             "background": "#121212",
-            "foreground": "#d9d9d9"
+           // "foreground": "#d9d9d9"
+            "foreground": "#bbbbbb"
         },
         {
             "name": "Tomorrow Night Eighties",
