@@ -1,0 +1,1 @@
+find . -regex ".*\(\.txt\|\.pdf\|\.doc\|\.docx\|\.zip\|\.rar\|\.ppt\|\.pptx\|\.xlsx\|\.xls\)$"  -print|xargs -n1 -i{} cp {} -av --parents /media/pi/LIUWEI/liuqiannan/
