@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "35bea286-0222-47f0-83cc-42d6fec7b355",
+    "name": "waleslau",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "e335242b-18ef-4a0d-96ea-861b99deaabc",
+    "name": "admin",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
