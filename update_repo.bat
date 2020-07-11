@@ -4,6 +4,6 @@ git pull
 git add .
 git commit -m "Update"
 git push
-git push -u coding master
+git push  coding
 
 pause
