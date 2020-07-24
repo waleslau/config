@@ -1,0 +1,48 @@
+pipeline {
+  agent any
+  environment {
+    ARTIFACT_BASE = "${CCI_CURRENT_TEAM}-docker.pkg.${CCI_CURRENT_DOMAIN}"
+    ARTIFACT_IMAGE="${ARTIFACT_BASE}/${PROJECT_NAME}/${DEPOT_NAME}/${DEPOT_NAME}"
+  }
+  stages {
+    stage('检出') {
+      steps {
+        checkout([$class: 'GitSCM', branches: [[name: env.GIT_BUILD_REF]],
+                            userRemoteConfigs: [[url: env.GIT_REPO_URL, credentialsId: env.CREDENTIALS_ID]]])
+      }
+    }
+    stage("Init Maverick") {
+            steps {
+                sh 'git clone https://github.com/waleslau/Maverick.git ./Maverick'
+            }
+        }
+    stage("Install dependencies") {
+            steps {
+              //  sh 'python3 -m pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple'
+                sh 'python3 -m pip install -i https://mirrors.cloud.tencent.com/pypi/simple --upgrade pip'
+                sh 'cd ./Maverick && ls -alh \
+                    && python3 -m pip install -i https://mirrors.cloud.tencent.com/pypi/simple -r prod_req.txt'
+            }
+        }
+    stage("Build site") {
+            steps {
+                sh 'mkdir ./Maverick/cached_imgs'
+              //  sh 'cp ./build_cache/sizeinfo.json ./Maverick/cached_imgs'
+              //  sh 'rm -rf ./build_cache/.git'
+                sh 'cd ./Maverick \
+                    && python3 ./build.py -c ../conf.py'
+              //  sh 'cp ./Maverick/cached_imgs/sizeinfo.json ./build_cache'
+            }
+        }
+    stage("Deploy") {
+            steps {
+                sh 'cd ./dist \
+                && git init \
+                && git config user.name "waleslau" \
+                && git config user.email "waleslau@foxmail.com" \
+                && git add . && git commit -m "Coding 持续集成" '
+                sh 'cd ./dist && git push --force --quiet https://${CODING_TOKEN_USER}:${CODING_TOKEN}@e.coding.net/waleslau/learn/wiki-deploy.git master:master'
+            }
+        }
+  }
+}
