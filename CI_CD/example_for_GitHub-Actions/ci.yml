@@ -1,0 +1,30 @@
+name: Example for GitHub Action  # 工作流名称
+
+on: [push]   # 触发条件
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest #构建环境，如无特殊需要可以默认为ubuntu-latest
+
+    steps:  # 步骤
+    - uses: actions/checkout@v2    # 第一步 使用checkout的v2版本
+	
+    - name: Set up Python 3.7      # 第二步 添加python环境	
+      uses: actions/setup-python@v1  # 引用公共存储库中的操作
+      with:
+        python-version: 3.7        # 使用python3.7版本
+		
+		
+    - name: Test                   # 第三步 
+      run: |
+        ls -all -h                 # 可以直接运行普通的linux命令
+        pwd                        # 注意此行输出，actions运行的默认路径是你的repo根目录，每一步都会回到根目录执行
+        python -m pip install --upgrade pip       # 可直接运行普通的python命令
+        python ./path/to/test.py             # 开始测试
+    - name: Build				   # 第四步
+      run: |
+        python ./path/to/build.py
+    - name: Deploy				   # 第五步 。。。
+      run: |
+        python ./path/to/deploy.py
