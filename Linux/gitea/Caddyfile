@@ -1,0 +1,7 @@
+git.oopsky.top
+tls {
+    protocols tls1.2 tls1.3
+    ciphers ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES256-GCM-SHA384 ECDHE-RSA-AES256-GCM-SHA384 ECDHE-ECDSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-WITH-CHACHA20-POLY1305
+}
+header / Strict-Transport-Security "max-age=63072000"
+proxy / http://localhost:3000
