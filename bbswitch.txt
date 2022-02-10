@@ -1,0 +1,13 @@
+sudo zypper ar -f http://download.opensuse.org/repositories/X11:/Bumblebee/openSUSE_Tumbleweed/ bumblebee
+
+sudo zypper ref
+
+sudo zypper in bbswitch dkms bbswitch-kmp-desktop
+
+su root
+
+echo "blacklist nouveau" >> /etc/modprobe.d/50-blacklist.conf
+echo "bbswitch" >> /etc/modules-load.d/modules.conf
+echo "options bbswitch load_state=0" > /etc/modprobe.d/50-bbswitch.conf
+mkinitrd
+cat /proc/acpi/bbswitch

@@ -1,0 +1,3 @@
+sudo zypper refresh;
+sudo zypper dist-upgrade --from packman --allow-vendor-change;
+sudo zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec-full vlc-codecs

@@ -1,0 +1,21 @@
+1. 安装 proxychains-ng
+
+ sudo zypper in proxychains-ng
+
+2. 编辑配置
+
+ sudo nano /etc/proxychains.conf
+
+然后在文件的末尾输入代理服务器地址（具体取决于你代理服务的配置，简单而言就是 代理类型 + 代理地址 + 代理端口），例如：
+
+http 127.0.0.1 8889
+socks5 127.0.0.1 1089
+
+按 Left CTRL + O 保存更改，按 Left CTRL + X 退出文件。
+
+3. 让 zypper 使用 proxychains 的代理
+
+在原有的 sudo 命令后，插入 proxychains4 ，例如：
+
+ sudo proxychains4 zypper ref
+ sudo proxychains4 zypper in vscode

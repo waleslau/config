@@ -1,0 +1,10 @@
+[user]
+	name = waleslau
+	email = waleslau@foxmail.com
+	signingKey = waleslau
+[http "https://github.com"]
+	proxy = socks5://127.0.0.1:1089
+[ssh "github.com"]
+	proxy = socks5://127.0.0.1:1089
+[init]
+	defaultBranch = main
