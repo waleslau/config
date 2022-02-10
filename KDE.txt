@@ -10,6 +10,6 @@ Plasma视觉风格：Arch-round
  - 工作区-锁屏-外观-壁纸类型-每日一图
 
 系统设置-窗口管理-Kwin脚本：
- - Step Move https://github.com/nclarius/KWin-window-geometry-scripts/releases
+ - Step Move https://store.kde.org/p/1632259
 
 Dock： latte-dock
