@@ -13,3 +13,6 @@ Plasma视觉风格：Arch-round
  - Step Move https://store.kde.org/p/1632259
 
 Dock： latte-dock
+
+omz theme:
+ - https://github.com/romkatv/powerlevel10k#oh-my-zsh
