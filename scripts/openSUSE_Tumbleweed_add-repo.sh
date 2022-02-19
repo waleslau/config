@@ -1,5 +1,6 @@
-sudo zypper ar -Cfg 'https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/oss/' oss
-sudo zypper ar -Cfg 'https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss/' non-oss
+sudo rm -rf /etc/zypp/repos.d/*.repo
+sudo zypper ar -Cfg 'https://opentuna.cn/opensuse/tumbleweed/repo/oss/' oss
+sudo zypper ar -Cfg 'https://opentuna.cn/opensuse/tumbleweed/repo/non-oss/' non-oss
 sudo zypper ar -CFg 'https://download.opensuse.org/repositories/home:/opensuse_zh/openSUSE_Tumbleweed/' home_opensuse_zh
 sudo zypper ar -Cfg 'https://mirrors.bfsu.edu.cn/packman/suse/openSUSE_Tumbleweed/' packman
 sudo zypper ar -CFg 'http://download.opensuse.org/repositories/X11:/Bumblebee/openSUSE_Tumbleweed/' bumblebee
