@@ -1,0 +1,1 @@
+for i in $(git remote show) ;do git push $i ;done
