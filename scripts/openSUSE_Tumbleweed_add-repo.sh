@@ -16,6 +16,7 @@ sudo zypper ar -CFg -r https://pkgs.tailscale.com/stable/opensuse/tumbleweed/tai
 sudo zypper mr -d update
 sudo zypper mr -d obs-waleslau
 sudo zypper mr -d obs-games
+sudo zypper mr -d microsoft-edge
 
 sudo proxychains4 zypper ref
 # sudo proxychains4 zypper dup
