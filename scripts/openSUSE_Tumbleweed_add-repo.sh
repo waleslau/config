@@ -8,14 +8,15 @@ sudo zypper ar -CFG 'https://packages.microsoft.com/yumrepos/edge/' microsoft-ed
 sudo zypper ar -CFG 'https://packages.microsoft.com/yumrepos/vscode/' vscode
 sudo zypper ar -CFg 'https://download.opensuse.org/repositories/home:/waleslau/openSUSE_Tumbleweed/' obs-waleslau
 sudo zypper ar -CFg 'https://download.opensuse.org/repositories/home:/zzndb/openSUSE_Tumbleweed/' obs-zzndb
-sudo zypper ar -CFg 'https://download.opensuse.org/repositories/home:fusionfuture/openSUSE_Tumbleweed/' obs-fusionfuture
 sudo zypper ar -CFg http://download.opensuse.org/repositories/games/openSUSE_Tumbleweed/ obs-games
+sudo zypper ar -CFg https://download.opensuse.org/repositories/games:tools/openSUSE_Tumbleweed/ obs-games-tools
 sudo zypper ar -Cfg 'http://download.opensuse.org/update/tumbleweed/' update
 sudo zypper ar -CFg -r https://pkgs.tailscale.com/stable/opensuse/tumbleweed/tailscale.repo
 
 sudo zypper mr -d update
 sudo zypper mr -d obs-waleslau
 sudo zypper mr -d obs-games
+sudo zypper mr -d obs-games-tools
 sudo zypper mr -d microsoft-edge
 
 sudo proxychains4 zypper ref
