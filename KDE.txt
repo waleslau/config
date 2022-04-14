@@ -1,3 +1,9 @@
+## 下面这俩全局主题超nice！搭配图标：Papirus
+ - Leaf Light
+ - Leaf Dark
+
+---
+
 欢迎屏幕：openSUSE
 
 锁屏壁纸：
@@ -11,15 +17,17 @@ Dock： latte-dock
 omz theme:
  - https://github.com/romkatv/powerlevel10k#oh-my-zsh
 
-# Dark
+
+## dark
+
 全局主题：Breeze微风深色
 
 Plasma视觉风格：Arch-round
 
 图标：Papirus
 
+## light
 
-# light
 全局主题：Breeze微风
 
 Plasma视觉风格：Arch-light
