@@ -1,0 +1,15 @@
+欢迎屏幕：openSUSE
+
+锁屏壁纸：
+ - 工作区-锁屏-外观-壁纸类型-每日一图
+
+Dock： latte-dock
+
+omz theme:
+ - https://github.com/romkatv/powerlevel10k#oh-my-zsh
+
+全局主题：Layan-light
+
+Plasma视觉风格：Adapta
+
+图标：Papirus
