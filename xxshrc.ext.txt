@@ -15,3 +15,11 @@ curl -F "c=@-" "https://fars.ee/"
 paste-termbin(){
 nc termbin.com 9999
 }
+
+alias kde-restart="kquitapp5 plasmashell && kstart plasmashell"
+#alias wps-office="QT_SCREEN_SCALE_FACTORS=1 wps-office"
+alias wps-office="env QT_SCREEN_SCALE_FACTORS=1 wps-office"
+alias sys-suspend="sudo systemctl hybrid-sleep"
+alias sys-hibernate="sudo systemctl hibernate"
+alias git-push-all='for i in $(git remote show) ;do git push $i ;done'
+alias git-push-all-force='for i in $(git remote show) ;do git push -f $i ;done'
