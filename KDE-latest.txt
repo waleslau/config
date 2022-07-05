@@ -1,3 +1,4 @@
+# sudo zypper in kvantum-manager kvantum-manager-lang kvantum-themes papirus-icon-theme
 欢迎屏幕：openSUSE
 
 锁屏壁纸：
@@ -8,8 +9,10 @@ Dock： latte-dock
 omz theme:
  - https://github.com/romkatv/powerlevel10k#oh-my-zsh
 
-全局主题：Layan-light
+全局主题：Qogir-dark
 
-Plasma视觉风格：Adapta
+Plasma视觉风格：WhiteSur-dark
+
+颜色：Kvantum
 
 图标：Papirus
