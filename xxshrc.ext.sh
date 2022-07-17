@@ -35,6 +35,8 @@ alias poweroff="sudo poweroff"
 alias pyc="proxychains4"
 alias hexo-server='hexo c && hexo g && hexo s'
 alias hugo-server='hugo server -D'
+alias cf="clang-format --style=WebKit"
+alias py="python3
 
 
 export NVM_DIR="$HOME/.nvm"
