@@ -28,7 +28,8 @@ alias wps-office="env QT_SCREEN_SCALE_FACTORS=1 wps-office"
 alias sys-suspend="sudo systemctl hybrid-sleep"
 alias sys-hibernate="sudo systemctl hibernate"
 alias git-push-all='for i in $(git remote show) ;do git push $i ;done'
-alias git-push-all-force='for i in $(git remote show) ;do git push -f $i ;done'
+alias git-force-push-all='for i in $(git remote show) ;do git push -f $i ;done'
+alias git-add-commit-push='git add . && git commit -m "update" && for i in $(git remote show) ;do git push $i ;done'
 alias iftop="sudo iftop"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
@@ -36,7 +37,9 @@ alias pyc="proxychains4"
 alias hexo-server='hexo c && hexo g && hexo s'
 alias hugo-server='hugo server -D'
 alias cf="clang-format --style=WebKit"
-alias py="python3
+alias py="python3"
+alias reboot="sudo shutdown -r now"
+alias poweroff="sudo shutdown -h now"
 
 
 export NVM_DIR="$HOME/.nvm"
