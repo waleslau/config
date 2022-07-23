@@ -1,4 +1,0 @@
-snd_hda_intel.dmic_detect=0
-
-
-

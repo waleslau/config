@@ -1,0 +1,3 @@
+两个可能的解决方案：
+1. 内核参数加 snd_hda_intel.dmic_detect=0
+2. 安装 sof-firmware 和 alsa-ucm-conf
