@@ -24,6 +24,11 @@ alias paste-farsee='curl --noproxy -F "c=@-" "https://fars.ee/"'
 alias paste-termbin="nc termbin.com 9999"
 alias fopen="cat-all.py | fzf | awk '{print $1}' | xargs xdg-open &>/dev/null"
 fcd(){cd $(fd --type directory | fzf)}
+alias ping='ping -c 5'
+alias www='xdg-open http://localhost:8000 && caddy file-server --listen :8000 --browse --root $PWD'
+alias c='clear'
+alias h='history'
+alias ipe='curl ipinfo.io/ip'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                                 # This loads nvm
