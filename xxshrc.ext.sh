@@ -29,6 +29,7 @@ alias www='xdg-open http://localhost:8000 && caddy file-server --listen :8000 --
 alias c='clear'
 alias h='history'
 alias ipe='curl ipinfo.io/ip'
+alias qcow2_random_password='virt-customize --root-password random -a'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                                 # This loads nvm
