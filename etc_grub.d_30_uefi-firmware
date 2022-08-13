@@ -1,0 +1,8 @@
+# add
+CLASS="--class efi --class uefi"
+
+# old
+menuentry '$LABEL' \$menuentry_id_option 'uefi-firmware'
+
+# new
+menuentry '$LABEL' ${CLASS} \$menuentry_id_option 'uefi-firmware'
