@@ -23,13 +23,15 @@ alias py="python3"
 alias paste-farsee='curl --noproxy -F "c=@-" "https://fars.ee/"' 
 alias paste-termbin="nc termbin.com 9999"
 alias fopen="cat-all.py | fzf | awk '{print $1}' | xargs xdg-open &>/dev/null"
-fcd(){cd $(fd --type directory | fzf)}
+alias fcd='cd $(fd --type directory | fzf)'
 alias ping='ping -c 5'
 alias www='xdg-open http://localhost:8000 && caddy file-server --listen :8000 --browse --root $PWD'
 alias c='clear'
 alias h='history'
 alias ipe='curl ipinfo.io/ip'
 alias qcow2_password_init="virt-customize --root-password password:root --run-command 'echo UGVybWl0Um9vdExvZ2luIHllcwo= | base64 -d >> /etc/ssh/sshd_config' -a"
+alias qcow2_compress="qemu-img convert -p -c -o compression_type=zstd -f qcow2 -O qcow2"
+alias ls='exa --icons'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                                 # This loads nvm
