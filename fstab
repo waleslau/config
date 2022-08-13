@@ -1,4 +1,4 @@
-UUID=xxx    /       btrfs  defaults,compress=zstd:1     0  0
+UUID=xxx    /       btrfs  defaults                     0  0
 UUID=xxx    /home   btrfs  defaults,compress=zstd       0  0
 /dev/nvme0n1p3	/windows/WinOS	    ntfs    defaults,fmask=333,dmask=222,uid=1000,gid=1000    0 0	
 /dev/nvme0n1p4	/windows/WinData	ntfs    defaults,fmask=133,dmask=022,uid=1000,gid=1000    0 0
